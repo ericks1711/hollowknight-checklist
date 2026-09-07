@@ -4,17 +4,23 @@ charms.forEach((charm) => {
   checkbox.type = "checkbox";
   checkbox.id = "charm-" + charm.id;
 
-  const label = document.createElement("label")
-  label.htmlFor = checkbox.id
+  const label = document.createElement("label");
+  label.htmlFor = checkbox.id;
   label.textContent = charm.nome;
-
+  
+  const imagem = document.createElement("img");
+  imagem.src = charm.imagem;
+  
   const item = document.createElement("div");
   item.appendChild(checkbox);
+  item.appendChild(imagem);
   item.appendChild(label);
 
-  listaEl.appendChild(item)
-  checkbox.addEventListener("change", AmuletosV)
+  listaEl.appendChild(item);
+  checkbox.addEventListener("change", AmuletosV);
 });
 function AmuletosV() {
-  let numAmuletos = listaEl.querySelectorAll('input[type="checkbox"]:checked').length;
+  const marcados = listaEl.querySelectorAll('input[type="checkbox"]:checked');
+  const progresso = document.getElementById("progresso");
+  progresso.textContent = `${marcados.length}/${charms.length}`;
 }
