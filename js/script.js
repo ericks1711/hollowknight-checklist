@@ -47,24 +47,21 @@ function atualizarProgresso() {
   //Amuletos
   const dadosAmuletos = calcularProgresso(listaAm, "Amuletos");
   progressoAmuletos.textContent = `Total de Amuletos: ${dadosAmuletos.marcados}/${dadosAmuletos.total} | ${dadosAmuletos.porcentagem}%`;
-  
+
   //Ferrão
   const dadosFerraoUp = calcularProgresso(listaFe, "Ferrao")
   progressoFerrao.textContent = `Total de Upgrades no Ferrão: ${dadosFerraoUp.marcados}/${dadosFerraoUp.total} | ${dadosFerraoUp.porcentagem}%`;
-  
+
   //Total
   const totalMarcados = calcularProgresso(progressoT)
   progresso.textContent = `Total para a coclusão: ${totalMarcados.marcados}/${totalMarcados.total} | ${totalMarcados.porcentagem}%`;
-}
-function save(event) {
-  localStorage.setItem(event.target.id, event.target.checked);
 }
 function calcularProgresso(elementoLista, categoria) {
   const marcados = elementoLista.querySelectorAll('input[type="checkbox"]:checked');
   let total;
   if (categoria === undefined) {
     total = itens.length
-  }else{
+  } else {
     total = itens.filter(item => item.categoria === categoria).length;
   }
   const porcentagem = (marcados.length / total) * 100;
@@ -74,4 +71,7 @@ function calcularProgresso(elementoLista, categoria) {
     total: total,
     porcentagem: porcentagem.toFixed(0)
   };
+}
+function save(event) {
+  localStorage.setItem(event.target.id, event.target.checked);
 }
