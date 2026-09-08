@@ -45,23 +45,33 @@ function atualizarProgresso() {
   const progressoFerrao = document.getElementById("progresso-ferrao");
 
   //Amuletos
-  const amuletosMarcados = listaAm.querySelectorAll('input[type="checkbox"]:checked');
-  const totalAmuletos = itens.filter(item => item.categoria === "Amuletos").length;
-  const porcentagemAmuletos = (amuletosMarcados.length / totalAmuletos) * 100;
-  progressoAmuletos.textContent = `Total de Amuletos: ${amuletosMarcados.length}/${totalAmuletos} | ${porcentagemAmuletos.toFixed(0)}%`;
+  const dadosAmuletos = calcularProgresso(listaAm, "Amuletos");
+  progressoAmuletos.textContent = `Total de Amuletos: ${dadosAmuletos.marcados}/${dadosAmuletos.total} | ${dadosAmuletos.porcentagem}%`;
   
   //Ferrão
-  const ferraoUpMarcados = listaFe.querySelectorAll('input[type="checkbox"]:checked');
-  const totalFerraoUp = itens.filter(item => item.categoria === "Ferrao").length;
-  const porcentagemFerraoUp = (ferraoUpMarcados.length / totalFerraoUp) * 100;
-  progressoFerrao.textContent = `Total de Upgrades no Ferrão: ${ferraoUpMarcados.length}/${totalFerraoUp} | ${porcentagemFerraoUp.toFixed(0)}%`;
+  const dadosFerraoUp = calcularProgresso(listaFe, "Ferrao")
+  progressoFerrao.textContent = `Total de Upgrades no Ferrão: ${dadosFerraoUp.marcados}/${dadosFerraoUp.total} | ${dadosFerraoUp.porcentagem}%`;
   
   //Total
-  const totalMarcados = progressoT.querySelectorAll('input[type="checkbox"]:checked');
-  const totalItens = totalAmuletos + totalFerraoUp;
-  const porcentagemConclusao = (totalMarcados.length / totalItens) * 100;
-  progresso.textContent = `Total para a coclusão: ${totalMarcados.length}/${totalItens} | ${porcentagemConclusao.toFixed(0)}%`;
+  const totalMarcados = calcularProgresso(progressoT)
+  progresso.textContent = `Total para a coclusão: ${totalMarcados.marcados}/${totalMarcados.total} | ${totalMarcados.porcentagem}%`;
 }
 function save(event) {
   localStorage.setItem(event.target.id, event.target.checked);
+}
+function calcularProgresso(elementoLista, categoria) {
+  const marcados = elementoLista.querySelectorAll('input[type="checkbox"]:checked');
+  let total;
+  if (categoria === undefined) {
+    total = itens.length
+  }else{
+    total = itens.filter(item => item.categoria === categoria).length;
+  }
+  const porcentagem = (marcados.length / total) * 100;
+
+  return {
+    marcados: marcados.length,
+    total: total,
+    porcentagem: porcentagem.toFixed(0)
+  };
 }
