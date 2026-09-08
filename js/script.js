@@ -19,6 +19,7 @@ charms.forEach((charm) => {
   listaEl.appendChild(item);
   checkbox.addEventListener("change", AmuletosV);
 });
+AmuletosV();
 function AmuletosV() {
   const marcados = listaEl.querySelectorAll('input[type="checkbox"]:checked');
   const progresso = document.getElementById("progresso");
