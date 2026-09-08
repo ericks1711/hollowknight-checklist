@@ -4,6 +4,12 @@ charms.forEach((charm) => {
   checkbox.type = "checkbox";
   checkbox.id = "charm-" + charm.id;
 
+  const valorSalvo = localStorage.getItem(checkbox.id);
+
+  if (valorSalvo === "true") {
+    checkbox.checked = true;
+  }
+
   const label = document.createElement("label");
   label.htmlFor = checkbox.id;
   label.textContent = charm.nome;
@@ -18,10 +24,17 @@ charms.forEach((charm) => {
 
   listaEl.appendChild(item);
   checkbox.addEventListener("change", AmuletosV);
+  
+  checkbox.addEventListener("change", save);
+  
 });
 AmuletosV();
 function AmuletosV() {
   const marcados = listaEl.querySelectorAll('input[type="checkbox"]:checked');
   const progresso = document.getElementById("progresso");
   progresso.textContent = `${marcados.length}/${charms.length}`;
+}
+
+function save(event) {
+  localStorage.setItem(event.target.id, event.target.checked);
 }
