@@ -26,6 +26,7 @@ itens.forEach((item) => {
   div.appendChild(checkbox);
   div.appendChild(imagem);
   div.appendChild(label);
+  div.className = "itens"
 
   if (item.categoria === "Amuletos") {
     listaAm.appendChild(div);
@@ -54,7 +55,7 @@ function atualizarProgresso() {
 
   //Total
   const totalMarcados = calcularProgresso(progressoT)
-  progresso.textContent = `Total para a coclusão: ${totalMarcados.marcados}/${totalMarcados.total} | ${totalMarcados.porcentagem}%`;
+  progresso.textContent = `Total para a conclusão: ${totalMarcados.marcados}/${totalMarcados.total} | ${totalMarcados.porcentagem}%`;
 }
 function calcularProgresso(elementoLista, categoria) {
   const marcados = elementoLista.querySelectorAll('input[type="checkbox"]:checked');

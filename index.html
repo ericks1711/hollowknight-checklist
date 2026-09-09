@@ -3,24 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hollow List</title>
+  <title>Hollow CheckList</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
   <script src="js/data.js" defer></script>
   <script src="js/script.js" defer></script>
 </head>
 <body>
   <header>
-    <h1>Hollow List</h1>
-    <nav id="categorias"></nav> <!--botão para ir para mascara, amuletos e tals-->
+    <h1>Hollow CheckList</h1>
     <p id="progresso"></p>
+<!--    <nav id="categorias"></nav> botão para ir para mascara, amuletos e tals-->
   </header>
   <main id="listas">
-    <section id="lista-amuleto">
+    <section>
       <h2>Amuletos</h2>
       <p id="progresso-amuletos"></p>
+      <div id="lista-amuleto" class="grid-itens"></div>
     </section>
-    <section id="lista-ferrao">
+    <section>
       <h2>Ferrão</h2>
       <p id="progresso-ferrao"></p>
+      <div id="lista-ferrao" class="grid-itens"></div>
     </section>
   </main>
   <footer></footer>
