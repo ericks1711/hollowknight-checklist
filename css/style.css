@@ -19,11 +19,22 @@ body {
   color: var(--cor-texto);
 }
 
+header img{
+  width: 5rem;
+  height: auto;
+}
+
+header div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 header {
   padding: 20px;
   border-bottom: var(--cor-acento-secundario) 1px solid;
   display: flex;
-  flex-direction: column;
+  flex-direction:row;
   gap: 10px;
 }
 
@@ -36,7 +47,6 @@ section {
 }
 
 .grid-itens {
-  border-radius: 15px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 }
