@@ -100,10 +100,10 @@ const itens = [
 
   // ---------- Magias ----------
   { id: 80, nome: "Espírito Vingativo", categoria: "Magia", valor: 1, imagem: "imgs/spells-80.webp" },
-  { id: 81, nome: "Mergulho Desolador", categoria: "Magia", valor: 1, imagem: "imgs/spells-81.webp" },
-  { id: 82, nome: "Espectros Uivantes", categoria: "Magia", valor: 1, imagem: "imgs/spells-82.webp" },
   { id: 83, nome: "Alma Sombria", categoria: "Magia", valor: 1, imagem: "imgs/spells-83.webp" },
+  { id: 81, nome: "Mergulho Desolador", categoria: "Magia", valor: 1, imagem: "imgs/spells-81.webp" },
   { id: 84, nome: "Escuridão Descente", categoria: "Magia", valor: 1, imagem: "imgs/spells-84.webp" },
+  { id: 82, nome: "Espectros Uivantes", categoria: "Magia", valor: 1, imagem: "imgs/spells-82.webp" },
   { id: 85, nome: "Grito do Abismo", categoria: "Magia", valor: 1, imagem: "imgs/spells-85.webp" },
 
 
