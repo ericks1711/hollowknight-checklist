@@ -19,23 +19,11 @@ body {
   color: var(--cor-texto);
 }
 
-header img{
-  width: 5rem;
-  height: 5rem;
-  object-fit: contain;
-}
-
-header div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 header {
   padding: 20px;
   border-bottom: var(--cor-acento-secundario) 1px solid;
   display: flex;
-  flex-direction:row;
+  flex-direction: column;
   gap: 10px;
 }
 
@@ -48,13 +36,15 @@ section {
 }
 
 .grid-itens {
+  border-radius: 15px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 }
 
 .itens {
   display: flex;
-  position: relative; /* torna a div itens como referencia para as coisas q acontece */
+  position: relative;
+  /* torna a div itens como referencia para as coisas q acontece */
   background-color: var(--cor-superficie);
   border: var(--cor-fundo) 1px solid;
   padding: 5px;
@@ -62,13 +52,11 @@ section {
   border-radius: 10px;
   text-align: center;
   flex-direction: column;
-  align-items: center;
-  min-height: 110px;
-  justify-content: space-evenly;
 }
 
 .itens input[type="checkbox"] {
-  position: absolute; /* se baseia no ancestral mais proximo que tem o relative */
+  position: absolute;
+  /* se baseia no ancestral mais proximo que tem o relative */
   opacity: 0;
   width: 100%;
   height: 100%;
@@ -102,17 +90,65 @@ section {
   display: flex;
 }
 
-.itens img{
+.itens img {
   width: 60px;
   height: 60px;
   object-fit: contain;
+  align-self: center;
 }
 
-#imgAmuletos{
+#imgAmuletos {
   display: flex;
   justify-content: center;
 }
-#imgAmuletos img{
+
+#imgAmuletos img {
   width: 50%;
   min-width: 300px;
+}
+
+nav#categorias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+nav#categorias a {
+  color: var(--cor-texto);
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border: var(--cor-acento-secundario) 2px solid;
+  border-radius: 20px;
+}
+
+nav#categorias a:hover {
+  border-color: var(--cor-acento);
+  color: var(--cor-acento);
+}
+
+#imgPanteoes {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.panteao-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.panteao-item img {
+  width: 140px;
+  height: auto;
+}
+
+.panteao-item span {
+  color: #e8e6e0;
+  font-size: 0.8rem;
+  margin-top: 4px;
 }
