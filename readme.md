@@ -40,10 +40,6 @@ Depois é só abrir o `index.html` no navegador de sua preferência.
 
 O código usa um objeto de configuração central (`categorias`) que mapeia cada categoria do jogo ao seu prefixo de id, elemento da lista e elemento de progresso — isso evita repetição de lógica e facilita adicionar novas categorias no futuro.
 
-## 📸 Screenshot
-
-<!-- Adicione aqui um print do projeto funcionando -->
-
 ## 📄 Créditos
 
 Este é um projeto pessoal, não-comercial, feito para fins de aprendizado e portfólio. Imagens, nomes e demais elementos de *Hollow Knight* pertencem à Team Cherry.
